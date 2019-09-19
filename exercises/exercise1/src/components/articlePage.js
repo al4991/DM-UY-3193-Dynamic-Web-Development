@@ -6,13 +6,16 @@ const styles = {
     marginLeft: "10%", 
     marginRight: "10%", 
     textAlign: "center", 
-    maxWidth: '100%', 
+    backgroundSize: 'cover', 
+    
   },
   titleText: {
     color: "white"
   },
   hide: {
-    visibility: "hidden"
+    visibility: "hidden",
+    width: "100%", 
+    height: "100%"
   },
   bodyText: { 
     marginLeft: "15%", 

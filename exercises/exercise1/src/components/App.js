@@ -12,6 +12,7 @@ const styles = {
 }
 
 
+
 function App(props) {
   const data = props.data; 
   return (
@@ -31,4 +32,3 @@ function App(props) {
 }
 
 export default App;
-
