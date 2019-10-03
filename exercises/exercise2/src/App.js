@@ -1,9 +1,13 @@
 import React from 'react';
 import Home from './components/Home';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
+
 
 function App() {
   return (
-    <Home />
+    <Router> 
+      <Route exact path='/' component={Home} />
+    </Router>
   );
 }
 
