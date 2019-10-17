@@ -3,6 +3,7 @@ import axios from 'axios';
 import WeatherIcon from './WeatherIcon';
 import PageWrapper from './PageWrapper';
 import Header from './Header';
+import TemperatureBasedWrapper from './PageWrapper';
 
 const apiKey = '35a285fb74dd51dc2c2c06ef66604ba9'; 
 
@@ -15,7 +16,7 @@ export default function Home(props) {
     function queryWeatherAPI(queryCity) { 
         axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${queryCity}&APPID=${apiKey}`)
         .then((res) => {
-            console.log(res);
+            console.log(res.data);
             return setWeather(res.data)}
         )
         .catch((err) => 
@@ -38,7 +39,7 @@ export default function Home(props) {
 
     return (
         <div> 
-            <Header temp={weather.main ? KtoF(weather.main.temp): undefined}> 
+            <Header temp={weather.main ? KtoF(weather.main.temp): undefined} > 
                 <a href="/?city=Seoul">
                     <button style={{background:'none', border:'none'}}>Seoul</button> 
                 </a> 
@@ -61,7 +62,7 @@ export default function Home(props) {
                 <p>Current Temperature: {weather.main? KtoF(weather.main.temp): undefined}</p>
                 <p>Today's High Temperature: {weather.main ? KtoF(weather.main.temp_max): undefined}</p>
                 <p>Today's Low Temperature: {weather.main? KtoF(weather.main.temp_min) : undefined}</p>
-                <p>Humidity: {!weather['main'] ? undefined : weather['main']['humidity']}</p>
+                <p>Humidity: {!weather.main ? undefined : weather.main.humidity} </p>
                 <p>Cloudy: {weather.clouds? weather.clouds.all : undefined} </p>
                 <p>Wind: {weather.wind? weather.wind.speed + "km/H coming at " + weather.wind.deg + " degrees" : undefined}</p>
                 

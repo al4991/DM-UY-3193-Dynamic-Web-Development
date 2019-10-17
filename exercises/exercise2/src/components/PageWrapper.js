@@ -1,6 +1,6 @@
 import React from 'react'; 
 
-export default function PageWrapper({temp=70, children}) { 
+export default function PageWrapper({temp=70,children}) { 
     let [r,g,b] = temp > 90 ? [237, 109, 95] : 
                 temp > 80 ? [237, 166, 95] : 
                 temp > 70 ? [213, 237, 95] : 
