@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router(); 
 
-router.get('/', (req, res) => res.send('name yeff'));
-router.get('/me', (req, res) => res.send('my name not actually yeff tbh'));
+router.get('/', (req, res) => res.send('My path is: "./about"'));
+router.get('/me', (req, res) => res.send('My path is "./about/me"'));
 
 module.exports = router; 
